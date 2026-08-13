@@ -9,7 +9,7 @@ For this project's data sources I used Quickbooks, and Mockaroo. I exported a "S
 
 **Considerations**
 
-**DATA CLEANING** For these datasets, all cleaning was done inside PowerBI via Power Query, with most of the cleaning being done to the Quickbooks exported report (attached to the main branch, a file containing a list of power query commands and reasoning behind use can be seen). 
+**DATA CLEANING** For these datasets, all cleaning was done inside PowerBI via Power Query, with most of the cleaning being done to the Quickbooks exported report. Quickbooks is known for adding extra top rows when exported to an excel file, so I removed these (returns null values). I also filtered out other null values, changed the data types of the columns, and replaced other relevant null values with "0" (there is a quantity section in the sales report that returned some "null" values because the service rendered would not have had a quantity in the first place, so replacing with 0 is a valid transformation). Lastly, I filtered out blank rows caused by a mismatch of "Product/Service Full Name" and "Discounts" that were applied.  
 
 **KPI METRICS** For the visualization of data portion of this project, I provided 4 industry specific KPI metrics to be tracked and accessed in PowerBI which are as follows: "Total Revenue", "Total Hours Logged", "Revenue Per Man-Hour", and "Average Ticket Size" (the DAX measures for these KPI can be found in the attached "DAX Measures" file). These KPIs track essential information for a landscaping business, and are must have additions to a visualization because they allow the business to quickly assess current profile health. 
 
