@@ -1,0 +1,3 @@
+**Calendar Table**: VAR MinYear = YEAR(MIN('Quickbooks'[Transaction date])) VAR MaxYear = YEAR(MAX('Quickbooks'[Transaction date])) RETURN ADDCOLUMNS( CALENDAR(DATE(MinYear, 1, 1), DATE(MaxYear, 12, 31)), "DateAsInteger", INT(FORMAT([Date], "YYYYMMDD")), "Year", YEAR([Date]), "MonthNumber", MONTH([Date]), "MonthName", FORMAT([Date], "MMMM"), "MonthShort", FORMAT([Date], "MMM"), "DayOfWeekNumber", WEEKDAY([Date]), "DayOfWeekName", FORMAT([Date], "dddd"), "Quarter", "Q" & FORMAT([Date], "Q") )
+
+  --This is the code used to create an independent date table (this code creates several formats and columns to allow for easier creation of slicers by date, and as such, can be generally applied in any instance in where a date table needs to be created).
